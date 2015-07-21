@@ -6,6 +6,5 @@ class CreateOrders < ActiveRecord::Migration
       t.float :total
     end
     add_index :orders, :user_id
-    add_index :orders, :product_id
   end
 end
