@@ -1,24 +1,34 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>VerySimpleApp</title>
+	<head>
+	  <title>VerySimpleApp</title>
 
-  <!-- Linking CSS files -->
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	  <!-- Linking CSS files -->
+	  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 
-  <!-- Linking js files -->
-  <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	  <!-- Linking js files -->
+	  <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<h1>Welcome to Bike FN</h1>
-<h2>Your source for used bikes in Friedrichshafen</h2>
+	  <%= csrf_meta_tags %>
+	</head>
+	<body>
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container-fluid">
+				<ul class="nav navbar-nav">
+					<li><%= link_to "home", static_pages_landing_page_path %></li>
+					<li><%= link_to "products", products_path %></li>
+					<li><%= link_to "about", static_pages_about_path %></li>
+					<li><%= link_to "contact", static_pages_contact_path %></li>
+				</ul>
+			</div>
+		</nav>
+		<h1>Welcome to Bike FN</h1>
+		<h2>Your source for used bikes in Friedrichshafen</h2>
 
-<%= yield %>
+		<%= yield %>
 
-</body>
+	</body>
 </html>
