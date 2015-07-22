@@ -22,11 +22,16 @@
 					<li><%= link_to "products", products_path %></li>
 					<li><%= link_to "about", static_pages_about_path %></li>
 					<li><%= link_to "contact", static_pages_contact_path %></li>
+					<li>
+						<%= form_tag("/products", method: "get") do %>
+							<%= label_tag(:q, "Search for:") %>
+							<%= text_field_tag(:q) %>
+							<%= submit_tag("Search") %>
+						<% end %>
+					</li>
 				</ul>
 			</div>
 		</nav>
-		<h1>Welcome to Bike FN</h1>
-		<h2>Your source for used bikes in Friedrichshafen</h2>
 
 		<%= yield %>
 
