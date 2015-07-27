@@ -5,6 +5,7 @@ class StaticPagesController < ApplicationController
   def landing_page
   	@products = Product.all
   	@counter = Product.count	
+    @product = Product.new
   end
 
   def thank_you
