@@ -28,6 +28,9 @@ gem 'devise'
 # CanCanCan
 gem 'cancancan', '~> 1.10'
 
+# Pagination
+gem 'will_paginate', '~> 3.0.6'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
