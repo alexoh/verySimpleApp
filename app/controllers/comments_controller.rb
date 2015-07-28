@@ -4,7 +4,6 @@ class CommentsController < ApplicationController
 		@product = Product.find(params[:product_id])
 		@comment = @product.comments.new(comment_params)
 		@comment.user = current_user
-		@posts = Post.paginate(:page => params[:page], :per_page => 5)
 
 		respond_to do |format|
 			if @comment.save
@@ -18,7 +17,13 @@ class CommentsController < ApplicationController
 	end
 
 	def destroy
+		@comment = Comment.find(params[:id])
+		product = @comment.product
+		@comment.destroy
+		redirect_to product
 	end
+
+	# @posts = Post.paginate(:page => params[:page], :per_page => 5)
 
 	private
 
