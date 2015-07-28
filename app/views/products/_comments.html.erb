@@ -12,4 +12,5 @@
 			<p><%= comment.body %></p>
 		</div>
 	<% end %>
+	<%= will_paginate product_comment_path(@product, comment) %>
 </div>

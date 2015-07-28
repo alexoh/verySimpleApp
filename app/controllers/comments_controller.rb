@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
 		redirect_to product
 	end
 
-	# @posts = Post.paginate(:page => params[:page], :per_page => 5)
+	Comment.all.paginate(:page => params[:page], :per_page => 5)
 
 	private
 
