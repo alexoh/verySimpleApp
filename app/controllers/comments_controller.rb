@@ -23,8 +23,6 @@ class CommentsController < ApplicationController
 		redirect_to product
 	end
 
-	Comment.all.paginate(:page => params[:page], :per_page => 5)
-
 	private
 
 	def comment_params
