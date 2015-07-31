@@ -1,41 +1,43 @@
 require 'rails_helper'
 
 describe Product do
+
+	before(:all) { @product = Product.new(name: "Amazingwheels", colour: "sparkling-pink", price: "500000")}
 	
 	context "only name present" do
 
-		before { @product = Product.new(name: "PewBike")}
-
-		it "should return product name" do
-		expect(@product.name).to eq "PewBike" 
-		end
-
-		it "should return price equal nil" do
-			expect(@product.price).to eq nil
+		it "returns product name" do
+		expect(@product.name).to eq "Amazingwheels" 
 		end
 	end
 
 	context "name, colour, price present" do
-		# To see whether you can stack multiple tests into one routine:
-
-		before { @product = Product.new(name: "Amazingwheels", colour: "sparkling-pink", price: "500000")}
-
-		it "should return name" do
+		it "returns name" do
 			expect(@product.name).to eq "Amazingwheels"
 		end
 
-		it "should return colour" do
+		it "returns colour" do
 			expect(@product.colour).to eq "sparkling-pink"
 		end
 
-		it "should return price" do
+		it "returns price" do
 			expect(@product.price).to eq "500000"
 		end
 
-		it "should return name, colour, price" do
-			expect(@product.name).to eq "Amazingwheels"
-			expect(@product.colour).to eq "sparkling-pink"
-			expect(@product.price).to eq "500000"
+	end
+
+	context "product counter displays correct number of products" do
+
+		before do
+			@counter = Product.count
+		end
+
+		it "finds counter to exist" do
+			Counter.exists?.should be_true
+		end
+
+		it "returns correct number of products" do
+			expect(@counter).to eq "1"
 		end
 	end
 end
