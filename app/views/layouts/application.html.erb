@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	  <title>VerySimpleApp</title>
+	  <title>Landsurfers</title>
 
 	  <!-- Linking CSS files -->
 	  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
@@ -15,6 +15,7 @@
 	  <%= csrf_meta_tags %>
 	</head>
 	<body>
+		<!-- Navbar -->
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="container-fluid">
 				<ul class="nav navbar-nav">
@@ -41,6 +42,8 @@
 				<% end %>
 			</div>
 		</nav>
+		<!-- End of Nav -->
+
 
 		<!-- notification messages for user login -->
 		<% if notice %>

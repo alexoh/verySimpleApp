@@ -25,22 +25,9 @@ describe Product do
 		end
 
 	end
-
-	context "product counter displays correct number of products" do
-
-		before do
-			@counter = Product.count
-		end
-
-		it "finds counter to exist" do
-			Counter.exists?.should be_true
-		end
-
-		it "returns correct number of products" do
-			expect(@counter).to eq "1"
-		end
-	end
+	
 end
+
 
 
 # look up in schema.rb
