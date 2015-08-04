@@ -2,7 +2,10 @@ require 'rails_helper'
 
 describe Product do
 
-	before(:all) { @product = Product.new(name: "Amazingwheels", colour: "sparkling-pink", price: "500000")}
+	before(:all) do
+		@product = Product.new(name: "Amazingwheels", colour: "sparkling-pink", price: "500000")
+		@comment = @product.comments.build(body: "blablub", rating: 4)
+	end
 	
 	context "only name present" do
 
@@ -24,6 +27,26 @@ describe Product do
 			expect(@product.price).to eq "500000"
 		end
 
+	end
+
+	context "comment present" do
+		
+		it "returns comment body" do
+			expect(@comment.body).to eq "blablub"
+		end
+
+		it "returns comment rating" do
+			expect(@comment.rating).to eq 4
+		end
+
+		it "returns rating of first comment" do
+			expect(@product.comments.first.rating).to eq 4
+		end
+
+		# Here, I don't know how to make it count all comments.
+		xit "gives correct number of comment for product" do
+			expect(@product.comments.all). to eq 1
+		end
 	end
 	
 end
