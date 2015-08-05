@@ -13,7 +13,7 @@ describe Product do
 
 	before(:all) do
 		@product = build(:product_full_profile)
-		@comment = build(:product_with_comments)
+		@comment = build(:comment)
 		# @comment = @product.comments.build(body: "blablub", rating: 4)
 	end
 

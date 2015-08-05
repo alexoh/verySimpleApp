@@ -18,18 +18,7 @@ FactoryGirl.define do
 			description "Blub"
 			image_url "bike.jpg"
 			colour "sparkling-pink"
-			price "100"
-
-			factory :product_with_comments do
-				
-				transient do
-					comments_count 1
-				end
-				
-				after(:create) do |user, evaluator|
-					create_list(:comment, evaluator.comments_count, user: user)
-				end
-			end				
+			price "100"	
 		end
 
 	end
