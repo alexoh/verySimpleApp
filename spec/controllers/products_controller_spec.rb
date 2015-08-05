@@ -3,9 +3,10 @@ require 'rails_helper'
 describe ProductsController, :type => :controller do
 
 	before do
-		@user = User.create(email: "test@test.com", password: "12345678")
-		@product = Product.create(name: "bike", price: "300")	
-	end
+		# Why do I need to use create instead of build here? Is that related to the way devise works?
+		@user = create(:user)
+		@product = create(:product) 
+		end
 
 	describe "GET #index" do
 

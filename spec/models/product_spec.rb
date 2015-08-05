@@ -1,17 +1,20 @@
 require 'rails_helper'
 
 describe Product do
-
-	before(:all) do
-		@product = Product.new(name: "Amazingwheels", colour: "sparkling-pink", price: "500000")
-		@comment = @product.comments.build(body: "blablub", rating: 4)
-	end
 	
 	context "only name present" do
+
+		before {@product = build(:product)}
 
 		it "returns product name" do
 		expect(@product.name).to eq "Amazingwheels" 
 		end
+	end
+
+	before(:all) do
+		@product = build(:product_full_profile)
+		@comment = build(:product_with_comments)
+		# @comment = @product.comments.build(body: "blablub", rating: 4)
 	end
 
 	context "name, colour, price present" do
@@ -24,7 +27,7 @@ describe Product do
 		end
 
 		it "returns price" do
-			expect(@product.price).to eq "500000"
+			expect(@product.price).to eq "100"
 		end
 
 	end

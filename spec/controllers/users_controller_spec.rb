@@ -14,7 +14,7 @@ describe UsersController, :type => :controller do
 	describe "GET #show" do
 
 		before do
-			@user = User.create(email: "test@test.com", password: "12345678")
+			@user = create(:user)
 			sign_in @user
 			get :index, id: @user.id
 		end

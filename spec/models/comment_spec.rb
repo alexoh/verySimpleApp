@@ -4,7 +4,7 @@ describe Comment do
 
 	context "comment rating" do
 		before do
-			@comment = Comment.new(product_id: "1", rating: "4")
+			@comment = build(:comment)
 		end
 
 		it "should return the comment rating" do
