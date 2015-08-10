@@ -34,6 +34,8 @@ gem 'will_paginate', '~> 3.0.6'
 # Factory girl
 gem 'factory_girl_rails', '~> 4.0'
 
+# Stripe (payment processing)
+gem 'stripe'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -73,7 +75,7 @@ group :development, :test do
 
 	# Add guard-spork link
 	gem 'guard-spork'
-	
+
 end
 
 group :production do
