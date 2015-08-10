@@ -5,3 +5,6 @@
 	data-name="<%= @product.name %>"
 	data-description="<%= @product.description %>">
  </script>
+ <input type="hidden" name="ProductName" value="<%= @product.name %>" >
+ <input type="hidden" name="ProductPrice" value="<%= @product.price + "00" %>" >
+
