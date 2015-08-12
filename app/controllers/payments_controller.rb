@@ -4,15 +4,21 @@ class PaymentsController < ApplicationController
 		# create charge on stripe server. This will charge the customer
 		begin
 			charge = Stripe::Charge.create(
-				:amount => params[:ProductPrice],
+				:amount => "#{params[:productPrice]}" + "00",
 				:currency => "usd",
 				:source => token,
-				:description => params[:stripeEmail] # How do I pass on multiple information using params ?
+				:description => "New Order: #{params[:productName]} from #{params[:stripeEmail]}."
 				)
 		rescue Stripe::CardError => e
 			# The card has been declined
 		end
+		@order = Order.new(:user_id => params[:userID], :product_id => params[:productID], :total => params[:productPrice])
+		@order.save
+
 	end
 end
+
+
+
 
 

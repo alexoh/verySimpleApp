@@ -5,6 +5,10 @@
 	data-name="<%= @product.name %>"
 	data-description="<%= @product.description %>">
  </script>
- <input type="hidden" name="ProductName" value="<%= @product.name %>" >
- <input type="hidden" name="ProductPrice" value="<%= @product.price + "00" %>" >
+ <input type="hidden" name="productName" value="<%= @product.name %>" >
+ <input type="hidden" name="productPrice" value="<%= @product.price %>" >
+ <input type="hidden" name="productID" value="<%= @product.id %>" >
+ <input type="hidden" name="userID" value="<%= :currentUser %>" >
+
+<!-- Missing: user id -->
 
