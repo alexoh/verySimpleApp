@@ -10,7 +10,7 @@
 	<tbody>
 		<tr>
 			<td><%= @order.product_id %></td>
-			<td><%= @order.total %></td>
+			<td><%= '%.2f' % (@order.total/100) %></td>
 		</tr>
 	</tbody>
 </table>

@@ -4,7 +4,7 @@ class PaymentsController < ApplicationController
 		# create charge on stripe server. This will charge the customer
 		begin
 			charge = Stripe::Charge.create(
-				:amount => "#{params[:productPrice]}" + "00",
+				:amount => params[:productPrice],
 				:currency => "usd",
 				:source => token,
 				:description => "New Order: #{params[:productName]} from #{params[:stripeEmail]}."
