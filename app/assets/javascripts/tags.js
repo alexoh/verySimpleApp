@@ -1,3 +1,3 @@
-// $(document).ready(function(){
-// 	$('#tags').tagsInput();
-// });
+$(document).ready(function(){
+
+});
