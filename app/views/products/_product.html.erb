@@ -3,7 +3,13 @@
         <td><%= product.description %></td>
         <td><%= product.image_url %></td>
         <td><%= product.colour %></td>
-        <td><%= '%.2f' % (product.price/100) %></td>
+        <td>
+            <% unless product.price == nil %>
+                <%= '%.2f' % (product.price/100) %>
+            <% else %>
+                <%= "no price indicated" %>
+            <% end %>
+        </td> 
         <td><%= link_to 'Show', product %></td>
         <td><%= link_to 'Edit', edit_product_path(product) %></td>
         <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
