@@ -20,7 +20,7 @@
   </p>
   <p>
   	<strong>Price</strong>
-  	<%= '%.2f' % (@product.price/100) unless price == nil %>
+  	<%= '%.2f' % (@product.price/100) unless @product.price == nil %>
   </p>
   <p>
     <strong>Rating</strong>
