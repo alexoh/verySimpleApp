@@ -20,7 +20,11 @@
   </p>
   <p>
   	<strong>Price</strong>
-  	<% @product.price == nil ? ("no price"):('%.2f' % (@product.price/100) %>
+    <% unless @product.price == nil %>
+  	<%= '%.2f' % (@product.price/100) %>
+    <% else %>
+    <%= "no price indicated" %>
+    <% end %>
   </p>
   <p>
     <strong>Rating</strong>
