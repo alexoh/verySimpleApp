@@ -20,7 +20,7 @@
   </p>
   <p>
   	<strong>Price</strong>
-  	<%= '%.2f' % (@product.price/100) %>
+  	<%= '%.2f' % (@product.price/100) unless price == nil %>
   </p>
   <p>
     <strong>Rating</strong>
@@ -32,7 +32,7 @@
     </form>
   </p>
   <p>
-    <%= form_tag "/payments/create" do %>
+    <%= form_tag('/payments/create', remote: true) do %>
       <%= render partial: "shared/stripe_checkout_button" %>
     <% end %>
   </p>
