@@ -1,1 +1,2 @@
 $('.product-reviews').append('<%= j (render @comment) %>');
+$('.rating').raty({ starOff: '/assets/star-off.png', starOn: '/assets/star-on.png', readOnly: true, noRatedMsg: 'just reload the page to rate this product again', });
